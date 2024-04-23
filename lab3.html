@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Vipers of LFAs?</title>
+    <script>
+      function changeChooser() {
+            console.log("got changed.");
+            var chooser = document.getElementById("carChooser");
+            var options = chooser.options;
+            var counter = 0
+            while (counter < options.length) {
+                if (options[counter].selected) {
+                    document.getElementById(options[counter].value).style.display = "";
+                } else {
+                    document.getElementById(options[counter].value).style.display = "none";
+                }
+                counter += 1;
+            }
+        }
+    </script>
+    <style>
+      #viper1, #viper2, #viper3 {
+          width: 81%;
+      }
+
+      #viper {
+          display: grid;
+          place-items: center;
+      } 
+
+      #lFA1, #lFA2, #lFA3 {
+          width: 81%;
+      }
+
+      #lFA {
+          display: grid;
+          place-items: center;
+      }
+    </style>
+  </head>
+  <body onload="changeChooser()">
+    <h1>Test</h1>
+    <select id="carChooser" onchange="changeChooser();">
+      <option value="viper">Viper</option>
+      <option value="lFA">LFA</option>
+    </select>
+    <div id="viper">
+      <h2>Viper</h2>
+      <img id="viper1" src="./images/viper.jpg">
+      <img id="viper2" src="./images/2003.jpg">
+      <img id="viper3" src="./images/aCR.jpg">
+    </div>
+    <div id="lFA">
+      <img id="lFA1" src="./images/lFA1.jpg">
+      <img id="lFA2" src="./images/lFA2.jpg">
+      <img id="lFA3" src="./images/lFA3.jpg">
+    </div>
+  </body>
+</html>
